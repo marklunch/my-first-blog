@@ -8,16 +8,13 @@
 			<a href="https://mjldata.com">My homepage</a>
 		</div>
 
-		<div>
-			<p>Published 03/09/2020 - 22:50</p>
-			<h2><a href = "">My first post</a></h2>
-			<p>I produced this following the django girls tutorial, which I highly recommend.</p>
-		</div>
-		<div>
-			<p>Published 03/09/2020 - 22:52</p>
-			<h2><a href="">Django Girls Tutorial</a></h2>
-			<p>Seeing as I am recommending it, here's a link.</p>
-		</div>
+		{% for post in posts %}
+			<div>
+				<p>Published: {{ post.published_date }} </p>
+				<h2><a href="">{{ post.title }}</a></h2>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{%  endfor %}
 
 
 
